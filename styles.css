@@ -1,0 +1,836 @@
+:root {
+    --nav-height: 90px;
+    /* Hauteur de la navbar */
+}
+
+
+/* Définir la hauteur de la barre de navigation */
+
+header nav {
+    height: var(--nav-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    /* S'assurer que la navbar est au-dessus du contenu */
+    background-color: black;
+    /* Ajoutez un fond noir pour la navbar */
+    color: white;
+    /* Texte de la navbar en blanc */
+}
+
+
+/* Appliquer une marge à la bannière pour qu'elle soit sous la navbar */
+
+.mt-[var(--nav-height)] {
+    margin-top: var(--nav-height);
+    /* Marge égale à la hauteur de la navbar */
+}
+
+
+/* Bannière : elle commence sous la navbar */
+
+.banniere {
+    height: 50vh;
+    /* Hauteur de la bannière (ajustée selon vos besoins) */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Organise le contenu en colonne */
+    justify-content: center;
+    /* Centre le contenu verticalement */
+    align-items: center;
+    /* Centre le contenu horizontalement */
+    background-color: black;
+    /* Fond noir */
+    color: white;
+    /* Texte blanc */
+    text-align: center;
+    /* Centre le texte */
+    margin-top: var(--nav-height);
+    /* Assure que la bannière commence juste sous la navbar */
+    padding: 0 20px;
+    /* Espacement à gauche et à droite */
+}
+
+.banniere h1 {
+    font-size: 4rem;
+    /* Taille du texte pour votre nom */
+    font-weight: bold;
+    /* Texte en gras */
+    margin-bottom: 10px;
+    /* Espace sous le nom */
+}
+
+.banniere p {
+    font-size: 1.5rem;
+    /* Taille du texte pour le titre (ex. Portfolio) */
+    margin-top: 10px;
+    /* Espacement au-dessus du titre */
+}
+
+
+/* Animation d'apparition du texte */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banniere h1,
+.banniere p {
+    animation: fadeIn 1s ease-out;
+    /* Animation sur l'apparition du texte */
+}
+
+
+/* ----------- Responsive Design ----------- */
+
+@media (max-width: 768px) {
+    .banniere {
+        height: 60vh;
+        /* Hauteur plus grande pour les mobiles */
+    }
+    .banniere h1 {
+        font-size: 3rem;
+        /* Taille réduite sur mobile */
+    }
+    .banniere p {
+        font-size: 1.2rem;
+        /* Taille réduite sur mobile */
+    }
+}
+
+#menu {
+    color: #0078ff !important;
+}
+
+body {
+    background-color: white;
+    font-family: myriade "regular";
+    color: white;
+}
+
+
+/*---------------nav bar-------------------------------------*/
+
+nav {
+    background-color: black;
+    border-bottom: white 2px solid;
+}
+
+nav button span {
+    color: white;
+}
+
+nav img {
+    width: 20%;
+}
+.navA {
+    color: white;
+}
+.navA:hover {
+    text-decoration: underline;
+}
+
+span {
+    color: white;
+}
+
+
+/*---------------page de garde-------------------------------------*/
+
+h1 {
+    margin: 0;
+}
+
+
+#canvas {
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+}
+
+.canvas-wrap {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    position: relative;
+}
+
+div.canvas-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+
+/*---------------page de présentation -------------------------------------*/
+
+.page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    color: black;
+}
+
+#logo {
+    width: 10%;
+}
+
+.logo {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.presentation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80vh;
+}
+
+
+/*---------------page compétence -------------------------------------*/
+
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 100%;
+}
+
+.carousel {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.slide {
+    margin-top: 20px;
+    width: 95%;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    box-shadow: 10px 10px 5px black;
+}
+
+.containerS {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.control-button {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 30px;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+button:hover {
+    background-color: rgb(175, 175, 175);
+    border: grey;
+    color: white;
+}
+
+button:active {
+    box-shadow: black 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+
+/*------------------*/
+
+.categorie {
+    width: 50%;
+    height: 89%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    margin: 10px;
+    text-decoration: underline 1px;
+    text-underline-offset: 5px;
+    font-size: 2rem;
+}
+
+.competence p {
+    margin: 5px 5px 2px 5px;
+    font-size: 1.7rem;
+}
+
+.competence {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.lien {
+    height: 80%;
+    border-left: solid white;
+}
+
+.barre {
+    margin: 0 0 0 5px;
+    background-color: white;
+    border: solid 1px white;
+    width: 95%;
+    height: 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.surDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 10px;
+    margin-bottom: 0;
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
+
+.barre div {
+    height: 100%;
+}
+
+.progress {
+    border-radius: 6px;
+    background-color: grey;
+    width: 0%;
+    transition: width 2s;
+}
+
+.categorie:hover .competence .barre .progress {
+    width: 100%;
+    border: white solid 1px;
+}
+
+.production {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 50%;
+}
+
+.productionI {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 70%;
+    margin: 5px;
+}
+
+.productionI img {
+    margin: 5px;
+    width: 25%;
+}
+
+.linkS {
+    text-decoration: none;
+}
+
+.linkS:hover {
+    text-decoration: none;
+}
+
+.trace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 20px;
+}
+
+
+/*---------------------- Media Queries ---------------------------*/
+
+@media (hover: none) and (pointer: coarse) {
+    .progress {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1920px) {
+    .trace {
+        width: 100%;
+    }
+    .production img {
+        height: auto;
+        width: 40%;
+        /* Réduire la taille des images */
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Pour les tablettes ou écrans de taille moyenne */
+    .containerS {
+        flex-direction: column;
+    }
+    .categorie {
+        width: 100%;
+    }
+    .production {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .production img {
+        width: 20%;
+        /* Réduire la taille des images */
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .competence p {
+        font-size: 1rem;
+    }
+    .buttonCap {
+        margin-top: 10px;
+    }
+    .intro {
+        display: flex;
+        flex-direction: column;
+    }
+    #choix {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+
+/* Pour les petits écrans (mobiles) */
+
+@media (max-width: 768px) {
+    .trace {
+        flex-direction: column;
+    }
+    .trace img {
+        width: 100%;
+    }
+    .carousel {
+        flex-direction: column;
+        /* Les slides s'empilent */
+    }
+    .slide {
+        flex-direction: column;
+        /* Empilement des éléments dans chaque slide */
+    }
+    .categorie {
+        width: 100%;
+        padding: 15px;
+    }
+    .production {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .production img {
+        width: 30%;
+        max-width: 300px;
+    }
+    h1 {
+        font-size: 1.4rem;
+    }
+    .competence p {
+        font-size: 1rem;
+    }
+    .buttonCap {
+        padding: 12px;
+    }
+}
+
+
+/* Pour les très petits écrans (mobiles très compacts) */
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+    .competence p {
+        font-size: 0.9rem;
+    }
+    .production img {
+        width: 40%;
+    }
+    .buttonCap {
+        padding: 10px;
+    }
+}
+
+
+/*----------------bouton----------------------*/
+
+.button-74 {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 30px;
+    box-shadow: black 4px 4px 0 0;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    margin-bottom: 40px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-74:hover {
+    background-color: rgb(175, 175, 175);
+    border: grey;
+    color: white;
+}
+
+.button-74 a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.button-74:active {
+    box-shadow: black 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+    .button-74 {
+        min-width: 120px;
+        padding: 0 25px;
+    }
+}
+
+
+/*------------------------*/
+
+.buttonCap {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 30px;
+    box-shadow: black 4px 4px 0 0;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 200px;
+    text-decoration: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.buttonCap:hover {
+    background-color: rgb(175, 175, 175);
+    border: grey;
+    color: white;
+}
+
+.buttonCap a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.buttonCap:active {
+    box-shadow: black 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+    .buttonCap {
+        min-width: 120px;
+        padding: 0 25px;
+    }
+}
+
+
+/*----------gallerie-----------------*/
+
+ul img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 1000ms;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    width: 90%;
+}
+
+figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+figure::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(0, 0, 0, 0.5);
+    transform-origin: center;
+    opacity: 0;
+    transform: scale(2);
+    transition: opacity 300ms;
+}
+
+figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    font-size: 1.2rem;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 600ms, transform 600ms;
+}
+
+a:is(:hover, :focus) figure::after {
+    opacity: 1;
+}
+
+a:is(:hover, :focus) figcaption {
+    opacity: 1;
+    transition: opacity 600ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    figcaption {
+        transform: translate3d(0, 2rem, 0);
+    }
+    figure::after {
+        border-radius: 50%;
+        opacity: 1;
+        transform: scale(0);
+        transition: transform 900ms;
+    }
+    a:is(:hover, :focus) figure::after {
+        transform: scale(2.5);
+    }
+    a:is(:hover, :focus) figcaption {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: opacity 600ms 400ms, transform 600ms 400ms;
+    }
+    a:is(:hover, :focus) img {
+        transform: scale(1.2);
+    }
+}
+
+
+/*----form-----------------*/
+
+.containerForm {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    background-color: grey;
+    box-shadow: 10px 10px 5px black;
+}
+
+input {
+    width: 90%;
+    border-radius: 30px;
+}
+
+textarea {
+    width: 90%;
+    border-radius: 30px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1rem;
+}
+
+
+/*----------ressource-----------------*/
+
+.imgLvl {
+    width: 1%;
+}
+
+
+/*----------Footer-----------------*/
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 10vh;
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.link {
+    margin: 0px;
+    padding: 0px;
+    width: 5%;
+}
+
+.link img {
+    width: 50%;
+}
+
+.link:hover {
+    border: none;
+}
+
+footer img {
+    padding: 0;
+    margin: 0 10px 0 10px;
+    height: 35%;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+footer img:hover {
+    text-decoration: none;
+}
+
+/* Modale Styles */
+#imageModal {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fond noir semi-transparent */
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #modalImage {
+    max-width: 90%;
+    max-height: 90%;
+    border: 2px solid white;
+    border-radius: 8px;
+  }
+
+  #modalClose {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #modalClose:hover {
+    color: #aaa;
+  }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Portfolio</title>
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Barre de navigation -->
+    <nav class="bg-black p-4 fixed w-full top-0 left-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html">
+                <img src="assets/logoV2.png" alt="Logo" id="logo">
+            </a>
+
+            <!-- Bouton Burger -->
+            <button class="xl:hidden text-white focus:outline-none" id="menu-toggle">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+
+            <!-- Menu principal visible au-delà de 1280px -->
+            <div id="menu" class="hidden xl:flex flex-col xl:flex-row space-y-4 xl:space-y-0 xl:space-x-6 text-center xl:text-left">
+                <a href="/" class="text-white">Accueil</a>
+                <a href="portfolioProfessionel.html" class="text-white">Mon Portfolio</a>
+                <a href="portfolioUniversitaire.html" class="text-white">Compétences</a>
+                <a href="galerie.html" class="text-white">Galerie</a>
+                <a href="contact.html" class="text-white">Contact</a>
+            </div>
+        </div>
+
+        <!-- Menu mobile burger -->
+        <div id="menu-mobile" class="hidden bg-black absolute top-0 left-0 w-full h-screen p-6 flex flex-col items-center space-y-4 text-2xl">
+            <!-- Bouton Exit -->
+            <button class="text-white self-end focus:outline-none" id="menu-close">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+            <!-- Liens du menu mobile -->
+            <a href="/" class="text-white">Accueil</a>
+            <a href="portfolioProfessionel.html" class="text-white">Mon Portfolio</a>
+            <a href="portfolioUniversitaire.html" class="text-white">Compétences</a>
+            <a href="galerie.html" class="text-white">Galerie</a>
+            <a href="contact.html" class="text-white">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Bannière sous la navbar -->
+    <div class="h-1/2 w-full flex flex-col items-center justify-center bg-black mt-[var(--nav-height)]">
+        <h1 class="text-4xl text-white no-underline m-4">Contact</h1>
+    </div>
+
+
+
+    <footer class="flex flex-col md:flex-row bg-black text-white justify-between items-center w-full p-6">
+        <!-- Social Media -->
+        <div class="flex flex-col md:flex-row items-center">
+            <p class="mb-2 md:mb-0 md:mr-4">Retrouvez-moi sur:</p>
+            <a href="https://www.instagram.com/erza_wood/" class="inline-block">
+                <img src="assets/insta.webp" alt="Instagram" class="h-10" />
+            </a>
+        </div>
+        <!-- Contact Info -->
+        <div class="flex flex-col items-center md:items-start text-center md:text-left mt-4 md:mt-0">
+            <p>Email : enora.tortech@gmail.com</p>
+            <p>Tel : 06 02 51 18 92</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sélection des éléments
+        const menuToggle = document.getElementById('menu-toggle'); // Bouton burger
+        const menuMobile = document.getElementById('menu-mobile'); // Menu mobile
+        const menuClose = document.getElementById('menu-close'); // Bouton Exit
+
+        // Ouvrir le menu burger
+        menuToggle.addEventListener('click', () => {
+            menuMobile.classList.remove('hidden'); // Affiche le menu mobile
+        });
+
+        // Fermer le menu burger
+        menuClose.addEventListener('click', () => {
+            menuMobile.classList.add('hidden'); // Masque le menu mobile
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Galerie</title>
+    <style>
+      /* Styles pour la modale */
+      #imageModal {
+        display: none; /* Caché par défaut */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Fond noir semi-transparent */
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #modalImage {
+        max-width: 90%;
+        max-height: 90%;
+        border: 2px solid white;
+        border-radius: 8px;
+      }
+
+      #modalClose {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      #modalClose:hover {
+        color: #aaa;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!----------------------partie de img------------------------------->
+    <div class="d-flex justify-content-center align-items-center w-100 mt-5">
+      <ul>
+        <li>
+          <a href="#">
+            <figure>
+              <img
+                src="assets/sneaker.jpg"
+                alt="MF26"
+                class="cursor-pointer"
+              />
+              <figcaption>MF26</figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <figure>
+              <img
+                src="assets/sneakerArrière.jpg"
+                alt="MF26"
+                class="cursor-pointer"
+              />
+              <figcaption>Lors d’un projet d’étude, j’ai eu l’opportunité de réaliser le design d’une sneaker inspirée par l’univers artistique de François Morellet. Nommé MF26.</figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <figure>
+              <img
+                src="assets/sneakerDessus.jpg"
+                alt="MF26"
+                class="cursor-pointer"
+              />
+              <figcaption>MF26</figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <figure>
+              <img
+                src="assets/sneakerNuit.jpg"
+                alt="MF26"
+                class="cursor-pointer"
+              />
+              <figcaption>MF26</figcaption>
+            </figure>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!----------------------partie modale------------------------------>
+    <div id="imageModal" class="flex">
+      <span id="modalClose">&times;</span>
+      <img id="modalImage" alt="Image en grand" />
+    </div>
+
+    <!-- Script JS -->
+    <script>
+      // Sélection des éléments HTML nécessaires
+      const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
+      const modalClose = document.getElementById("modalClose");
+      const images = document.querySelectorAll("img.cursor-pointer");
+
+      // Ajout d'un gestionnaire d'événements sur chaque image
+      images.forEach((image) => {
+        image.addEventListener("click", () => {
+          modal.style.display = "flex"; // Affiche la modale
+          modalImage.src = image.src; // Définit l'image dans la modale
+        });
+      });
+
+      // Ferme la modale en cliquant sur la croix
+      modalClose.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      // Ferme la modale si on clique à l'extérieur de l'image
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

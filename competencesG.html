@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Portfolio</title>
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="flex justify-center flex-col items-center">
+
+    <!-- Barre de navigation -->
+    <nav class="bg-black p-4 fixed w-full top-0 left-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+          <!-- Logo -->
+          <a href="index.html">
+            <img src="assets/logoV2.png" alt="Logo" id="logo" />
+          </a>
+  
+          <!-- Bouton Burger -->
+          <button
+            class="xl:hidden text-white focus:outline-none"
+            id="menu-toggle"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+  
+          <!-- Menu principal visible au-delà de 1280px -->
+          <div
+            id="menu"
+            class="hidden xl:flex flex-col xl:flex-row space-y-4 xl:space-y-0 xl:space-x-6 text-center xl:text-left"
+          >
+            <a href="/" class="navA">Accueil</a>
+            <a href="portfolioProfessionel.html" class="navA"
+              >Mon Portfolio</a
+            >
+            <a href="portfolioUniversitaire.html" class="navA"
+              >Compétences</a
+            >
+            <a href="galerie.html" class="navA">Galerie</a>
+            <a href="contact.html" class="navA">Contact</a>
+          </div>
+        </div>
+  
+        <!-- Menu mobile burger -->
+        <div
+          id="menu-mobile"
+          class="hidden bg-black absolute top-0 left-0 w-full h-screen p-6 flex flex-col items-center space-y-4 text-2xl"
+        >
+          <!-- Bouton Exit -->
+          <button class="text-white self-end focus:outline-none" id="menu-close">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+  
+          <!-- Liens du menu mobile -->
+          <a href="/" class="navA">Accueil</a>
+          <a href="portfolioProfessionel.html" class="navA"
+            >Mon Portfolio</a
+          >
+          <a href="portfolioUniversitaire.html" class="navA">Compétences</a>
+          <a href="galerie.html" class="navA">Galerie</a>
+          <a href="contact.html" class="navA">Contact</a>
+        </div>
+      </nav>
+
+    <!-- Bannière sous la navbar -->
+    <section class="canvas-wrap flex flex-col justify-center items-center text-center h-[50vh] relative overflow-hidden">
+        <div class="canvas-content z-10">
+            <h1 class="no-underline text-4xl lg:text-6xl ">Compétences en Graphisme</h1>
+
+        </div>
+        <div id="canvas" class="gradient absolute top-0 left-0 w-full h-full"></div>
+    </section>
+    <!-- Main library -->
+    <script src="js/three.min.js"></script>
+
+    <!-- Helpers -->
+    <script src="js/projector.js"></script>
+    <script src="js/canvas-renderer.js"></script>
+
+    <!-- Visualitzation adjustments -->
+    <script src="js/3d-lines-animation.js"></script>
+
+    <!----------------------TRACE----------------------------->
+    <div class="flex bg-red text-black justify-center items-center py-10 flex-col">
+        <div class="trace">
+            <img class="w-1/4 mt-5" src="assets/v1.jpg" alt="">
+            <p class="text-left m-5">Ce projet, réalisé en deuxième année dans le cadre d'une SAE, consistait à concevoir le packaging d'une bière inspirée d'un conte au choix, tout en imaginant une saveur unique pour cette bière. J'ai choisi de m'inspirer du conte de la princesse
+                Kagura, une histoire riche en symbolisme et en éléments culturels. En m'appuyant sur l'univers de ce conte, j'ai créé une saveur originale de bambou, offrant ainsi une expérience gustative unique qui s'harmonise parfaitement avec l'esthétique
+                et le thème du packaging.</p>
+        </div>
+
+        <div class="trace">
+            <img class="w-1/4 mt-5" src="assets/v2.jpg" alt="">
+            <p class="text-left m-5">Ce projet, mené par moi-même, a permis de développer des compétences pratiques et stratégiques en lien avec la co-conception de produits et de services (AC22.01). En plus de travailler sur la proposition de valeur et les fonctionnalités du
+                produit (AC12.01, AC12.02, AC22.01), j'ai pu tester et affiner des recommandations ergonomiques à partir de prototypes et de maquettes interactives (AC22.02). Ce travail a également impliqué une démarche de co-construction stratégique,
+                notamment à travers l'élaboration d'un plan d'action structuré pour assurer la cohérence entre la création, la production et la communication (AC22.03). J'ai également créé et décliné une identité visuelle, en élaborant une charte graphique
+                cohérente pour le projet (AC23.03). Enfin, la mise en place d'une présence sur les réseaux sociaux a été essentielle pour promouvoir le produit et garantir son impact auprès du public cible (AC22.05).
+            </p>
+        </div>
+
+        <div class="trace">
+            <img class="w-1/4 mt-5 mb-5" src="assets/v3.jpg" alt="">
+            <p class="text-left m-5">Cette expérience m'a permis d'appréhender de manière concrète les contraintes professionnelles auxquelles peuvent être confrontés les graphistes, tout en développant une vision complète du processus créatif, de la conception à la communication,
+                en passant par les tests utilisateurs et l'optimisation du produit.</p>
+        </div>
+
+    </div>
+
+
+
+    <!----------------------tableau des compétence----------------------------->
+    <table class="text-black w-full border-2">
+        <thead>
+            <tr>
+                <th scope="col">Ressources</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Niveau</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="border-b-2">
+                <th scope="row">AC12.01</th>
+                <td>Concevoir un produit ou un service en terme d’usage et de fonctionnalité</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC12.02</th>
+                <td> Construire la proposition de valeur d’un produit ou d’un service</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC12.03</th>
+                <td>Proposer une recommandation marketing (cibles, objectifs, points de contact)</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC12.04</th>
+                <td>Proposer une stratégie de communication</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC13.02</th>
+                <td>Produire des pistes graphiques et des planches d’inspiration</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC13.03</th>
+                <td>Créer, composer et retoucher des visuels</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC22.01</th>
+                <td>Co-concevoir un produit ou un service (proposition de valeur, fonctionnalités...)</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC22.02</th>
+                <td>Produire une recommandation ergonomique à partir des tests utilisateurs (sur système fonctionnel, prototype ou maquette interactive)</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC22.03</th>
+                <td>Co-construire une recommandation stratégique (en structurant un plan d’action)</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC22.04</th>
+                <td>Optimiser le référencement d’un site web, d’un produit ou d’un service</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC22.05</th>
+                <td>Mettre en place une présence sur les réseaux sociaux</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC23.02</th>
+                <td>Définir une iconographie (illustrations, photographies, vidéos)</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC23.03</th>
+                <td>Créer et décliner une identité visuelle (charte graphique)</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC23.04</th>
+                <td>Imaginer, écrire et scénariser en vue d’une communication multimédia ou transmédia</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+            <tr class="border-b-2">
+                <th scope="row">AC23.05</th>
+                <td>Réaliser, composer et produire pour une communication plurimédia</td>
+                <td class="flex justify-center">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/star.png" alt="" class="imgLvl inline-block mr-1">
+                    <img src="assets/starV.png" alt="" class="imgLvl inline-block mr-1">
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+
+
+
+    <footer class="flex flex-col md:flex-row bg-black text-white justify-between items-center w-full p-6">
+        <!-- Social Media -->
+        <div class="flex flex-col md:flex-row items-center">
+            <p class="mb-2 md:mb-0 md:mr-4">Retrouvez-moi sur:</p>
+            <a href="https://www.instagram.com/erza_wood/" class="inline-block">
+                <img src="assets/insta.webp" alt="Instagram" class="h-10" />
+            </a>
+        </div>
+        <!-- Contact Info -->
+        <div class="flex flex-col items-center md:items-start text-center md:text-left mt-4 md:mt-0">
+            <p>Email : enora.tortech@gmail.com</p>
+            <p>Tel : 06 02 51 18 92</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sélection des éléments
+        const menuToggle = document.getElementById('menu-toggle'); // Bouton burger
+        const menuMobile = document.getElementById('menu-mobile'); // Menu mobile
+        const menuClose = document.getElementById('menu-close'); // Bouton Exit
+
+        // Ouvrir le menu burger
+        menuToggle.addEventListener('click', () => {
+            menuMobile.classList.remove('hidden'); // Affiche le menu mobile
+        });
+
+        // Fermer le menu burger
+        menuClose.addEventListener('click', () => {
+            menuMobile.classList.add('hidden'); // Masque le menu mobile
+        });
+    </script>
+
+</body>
+
+</html>
