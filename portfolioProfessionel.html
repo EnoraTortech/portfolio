@@ -1,105 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Portfolio</title>
     <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- Barre de navigation -->
     <nav class="bg-black p-4 fixed w-full top-0 left-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-          <!-- Logo -->
-          <a href="index.html">
-            <img src="assets/logoV2.png" alt="Logo" id="logo" />
-          </a>
-  
-          <!-- Bouton Burger -->
-          <button
-            class="xl:hidden text-white focus:outline-none"
-            id="menu-toggle"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
-  
-          <!-- Menu principal visible au-delà de 1280px -->
-          <div
-            id="menu"
-            class="hidden xl:flex flex-col xl:flex-row space-y-4 xl:space-y-0 xl:space-x-6 text-center xl:text-left"
-          >
-            <a href="/" class="navA">Accueil</a>
-            <a href="portfolioProfessionel.html" class="navA"
-              >Mon Portfolio</a
-            >
-            <a href="portfolioUniversitaire.html" class="navA"
-              >Compétences</a
-            >
-            <a href="galerie.html" class="navA">Galerie</a>
-            <a href="contact.html" class="navA">Contact</a>
-          </div>
-        </div>
-  
-        <!-- Menu mobile burger -->
-        <div
-          id="menu-mobile"
-          class="hidden bg-black absolute top-0 left-0 w-full h-screen p-6 flex flex-col items-center space-y-4 text-2xl"
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html">
+          <img src="assets/logoV2.png" alt="Logo" id="logo" />
+        </a>
+
+        <!-- Bouton Burger -->
+        <button
+          class="xl:hidden text-white focus:outline-none"
+          id="menu-toggle"
         >
-          <!-- Bouton Exit -->
-          <button class="text-white self-end focus:outline-none" id="menu-close">
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              ></path>
-            </svg>
-          </button>
-  
-          <!-- Liens du menu mobile -->
-          <a href="/" class="navA">Accueil</a>
-          <a href="portfolioProfessionel.html" class="navA"
-            >Mon Portfolio</a
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Menu principal visible au-delà de 1280px -->
+        <div
+          id="menu"
+          class="hidden xl:flex flex-col xl:flex-row space-y-4 xl:space-y-0 xl:space-x-6 text-center xl:text-left"
+        >
+          <a href="/" class="navA">Accueil</a>
+          <a href="portfolioProfessionel.html" class="navA">Mon Portfolio</a>
           <a href="portfolioUniversitaire.html" class="navA">Compétences</a>
           <a href="galerie.html" class="navA">Galerie</a>
           <a href="contact.html" class="navA">Contact</a>
         </div>
-      </nav>
+      </div>
 
-    <!-- Bannière sous la navbar -->
-    <section class="canvas-wrap flex flex-col justify-center items-center text-center h-[50vh] relative overflow-hidden">
-        <div class="canvas-content z-10">
-            <h1 class="no-underline text-4xl lg:text-6xl font-bold">Enora Tortech</h1>
-            <h2 class="no-underline text-2xl lg:text-4xl mt-20">Portfolio</h2>
-        </div>
-        <div id="canvas" class="gradient absolute top-0 left-0 w-full h-full"></div>
+      <!-- Menu mobile burger -->
+      <div
+        id="menu-mobile"
+        class="hidden bg-black absolute top-0 left-0 w-full h-screen p-6 flex flex-col items-center space-y-4 text-2xl"
+      >
+        <!-- Bouton Exit -->
+        <button class="text-white self-end focus:outline-none" id="menu-close">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Liens du menu mobile -->
+        <a href="/" class="navA">Accueil</a>
+        <a href="portfolioProfessionel.html" class="navA">Mon Portfolio</a>
+        <a href="portfolioUniversitaire.html" class="navA">Compétences</a>
+        <a href="galerie.html" class="navA">Galerie</a>
+        <a href="contact.html" class="navA">Contact</a>
+      </div>
+    </nav>
+
+      <!-- Bannière sous la navbar -->
+      <section
+      class="canvas-wrap flex flex-col justify-center items-center text-center h-[30vh] relative overflow-hidden"
+    >
+      <div class="canvas-content z-10">
+        <h1 class="no-underline text-xl lg:text-4xl font-bold mt-20">
+          Enora Tortech
+        </h1>
+        <h2 class="no-underline text-lg lg:text-2xl mt-5">Portfolio</h2>
+      </div>
+      <div
+        id="canvas"
+        class="gradient absolute top-0 left-0 w-full h-full"
+      ></div>
     </section>
     <!-- Main library -->
     <script src="js/three.min.js"></script>
@@ -111,190 +110,233 @@
     <!-- Visualitzation adjustments -->
     <script src="js/3d-lines-animation.js"></script>
 
-
-    <div class="container mx-auto flex flex-col lg:flex-row items-center text-black h-[50vh]">
-        <!-- Logo -->
-        <div class="lg:w-1/3 mb-8 lg:mb-0">
-            <img src="assets/logoV2B.png" alt="Logo" class="w-48 mx-auto" />
-        </div>
-        <!-- Text -->
-        <div class="lg:w-2/3 text-xl">
-            <p class="m-4">
-                Bonjour, je suis actuellement en formation dans le domaine du multimédia, avec une ambition claire et passionnée de devenir webdesigner. Mon parcours éducatif et mes expériences pratiques m'ont permis d'acquérir des compétences solides et diversifiées
-                dans le domaine du design et de la création web.
-            </p>
-            <p class="m-4">
-                Mon objectif est de devenir un webdesigner accompli, capable de transformer des idées créatives en expériences numériques captivantes. Je suis particulièrement intéressé par la création de sites web qui non seulement sont esthétiquement plaisants mais
-                qui offrent également une expérience utilisateur exceptionnelle.
-            </p>
-            <p class="m-4">
-                Je suis passionné par l'idée de combiner esthétique et fonctionnalité dans mes créations. Mon approche est centrée sur l'utilisateur, et je m'efforce toujours de comprendre les besoins et les attentes de mes clients pour créer des solutions sur mesure.
-            </p>
-        </div>
+    <div
+      class="container mx-auto flex flex-col lg:flex-row items-center text-black h-[70vh]"
+    >
+      <!-- Logo -->
+      <div class="lg:w-1/3 mb-8 lg:mb-0">
+        <img src="assets/logoV2B.png" alt="Logo" class="w-48 mx-auto" />
+      </div>
+      <!-- Text -->
+      <div class="lg:w-2/3 text-xl">
+        <p class="m-4">
+          Actuellement en formation dans le domaine du multimédia, je m'engage avec passion dans le développement de compétences en design numérique et en création web. Mon parcours académique, enrichi par une expérience pratique en entreprise, m’a permis d’acquérir une maîtrise solide des outils de conception et de développement.
+        </p>
+        <p class="m-4">
+          Lors d'un stage au sein d'une entreprise publicitaire, j'ai eu l'opportunité de diversifier mes compétences en graphisme en réalisant des visuels percutants et adaptés aux besoins des clients. En parallèle, j'ai collaboré au développement d'une application web basée sur Angular, qui avait pour objectif de permettre aux utilisateurs de créer et gérer leurs propres sites web, dans une logique similaire à celle des CMS comme WordPress. Cette plateforme intégrait également une fonctionnalité d'hébergement pour offrir une solution complète et clé en main.
+        </p>
+        <p class="m-4">
+          Mon ambition est de devenir un webdesigner accompli, capable de combiner esthétique et fonctionnalité pour créer des expériences numériques engageantes et intuitives. Ma vision est de concevoir des projets qui répondent aux attentes des utilisateurs tout en valorisant l'identité unique de chaque client.
+        </p>
+      </div>
+      
     </div>
 
-
-    <!----------------------page des compétence----------------------------->
     <!----------------------page des compétence----------------------------->
     <div class="carousel-container" id="competences">
-        <div class="controls">
-            <button class="control-button ml-0">Graphisme</button>
-            <button class="control-button ml-12">WEB</button>
-        </div>
+      <div class="controls">
+        <button class="control-button ml-0">Graphisme</button>
+        <button class="control-button ml-12">WEB</button>
+      </div>
 
-        <div class="carousel">
-            <!------------Graphisme------------------>
-            <div class="slide">
-                <div class="containerS">
-                    <div class="categorie">
-                        <h1 class="text-4xl no-underline m-2.5">Graphisme</h1>
-                        <div class="surDiv">
-                            <div class="competence">
-                                <p>Photoshop</p>
-                                <div class="barre">
-                                    <div style="width: 60%;">
-                                        <div class="progress"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="competence">
-                                <p>Illustrator</p>
-                                <div class="barre">
-                                    <div style="width: 60%;">
-                                        <div class="progress"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="competence">
-                                <p>InDesign</p>
-                                <div class="barre">
-                                    <div style="width: 50%;">
-                                        <div class="progress"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="competence">
-                                <p>After Effects</p>
-                                <div class="barre">
-                                    <div style="width: 60%;">
-                                        <div class="progress"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+      <div class="carousel">
+        <!------------Graphisme------------------>
+        <div class="slide">
+            <div class="containerS">
+              <div class="categorie">
+                <h1>Graphisme</h1>
+                <div class="surDiv">
+                  <div class="competence">
+                    <p>Photoshop</p>
+                    <div class="barre">
+                      <div style="width: 60%">
+                        <div class="progress"></div>
+                      </div>
                     </div>
-                    <div class="production">
-                        <div class="productionI">
-                            <img src="assets/sneaker.jpg" alt="" />
-                            <img src="assets/sneakerNuit.jpg" alt="" />
-                            <img src="assets/v1.jpg" alt="" />
-                            <img src="assets/binsta.jpg" alt="" />
-                        </div>
+                  </div>
+                  <div class="competence">
+                    <p>Illustrator</p>
+                    <div class="barre">
+                      <div style="width: 60%">
+                        <div class="progress"></div>
+                      </div>
                     </div>
+                  </div>
+                  <div class="competence">
+                    <p>InDesign</p>
+                    <div class="barre">
+                      <div style="width: 50%">
+                        <div class="progress"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="competence">
+                    <p>After Effects</p>
+                    <div class="barre">
+                      <div style="width: 60%">
+                        <div class="progress"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="flex justify-around items-center m-0">
-
-                    <Button class="button-74" role="button"><a href="galerie.html">En voir plus</a></Button>
-
-                </div>
-
+              </div>
+              <div class="production">
+                  <section class="mt-20 p-6">
+  
+                      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 w-11/12 mx-auto">
+                        <!-- Exemple d'images avec des descriptions -->
+                        <div class="gallery">
+                          <img
+                            src="assets/v1.jpg"
+                            alt="Design de la bouteille"
+                            class="cursor-pointer"
+                            data-description="Ceci est un projet en cours sur la création d'une bière artisanale et de son packaging autour du conte de 'La Princesse Kaguya'. Cette image présente le design de la bouteille."
+                          />
+                        </div>
+                        <div class="gallery">
+                          <img
+                            src="assets/v2.jpg"
+                            alt="Illustration du packaging"
+                            class="cursor-pointer"
+                            data-description="Une vue détaillée du packaging de la bière. L'univers visuel s'inspire des motifs traditionnels japonais et des éléments du conte."
+                          />
+                        </div>
+                        <div class="gallery">
+                          <img
+                            src="assets/v3.jpg"
+                            alt="Prototype du packaging"
+                            class="cursor-pointer"
+                            data-description="Prototype du packaging mettant en avant des couleurs et textures reflétant l'esthétique japonaise."
+                          />
+                        </div>
+                        <div class="gallery">
+                          <img
+                            src="assets/v1Insta.png"
+                            alt="Étiquette détaillée"
+                            class="cursor-pointer"
+                            data-description="L'étiquette explore des motifs inspirés des bambous et de la lumière lunaire, un hommage à la Princesse Kaguya."
+                          />
+                        </div>
+                        <div class="gallery">
+                          <img
+                            src="assets/binsta.jpg"
+                            alt="Scène finale"
+                            class="cursor-pointer"
+                            data-description="Une scène finale montrant la bière en situation, prête à être appréciée dans un univers visuel cohérent."
+                          />
+                        </div>
+                        <!-- Autres images... -->
+                      </div>
+              </div>
             </div>
-
-            <!------------Webdesign------------------>
-            <div class="slide">
-                <div class="containerS">
-                    <div class="categorie">
-                        <h1 class="text-4xl no-underline m-2.5">WEB</h1>
-                        <div class="surDiv">
-                            <div class="competence">
-                                <p>HMLT-CSS</p>
-                                <div class="barre">
-                                    <div style="width: 75%;">
-                                        <div class="progress"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="competence">
-                                <p>CMS</p>
-                                <div class="barre">
-                                    <div style="width: 60%;">
-                                        <div class="progress"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="competence">
-                                <p>PHP</p>
-                                <div class="barre">
-                                    <div style="width: 50%;">
-                                        <div class="progress"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="competence">
-                                <p>Java Script</p>
-                                <div class="barre">
-                                    <div style="width: 60%;">
-                                        <div class="progress"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="production">
-                        <div class="productionI">
-                            <a href="https://alyciawood.github.io/YokiData/" class="flex justify-center items-center flex-col"><img src="assets/logoData.png" alt="" />YokiData</a>
-                            <a href="https://enoratortech.github.io/TheWood/index.html" class="flex justify-center items-center flex-col"><img src="assets/logoTheWood.PNG" class="w-1/2" alt="" />The Wood</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex justify-around items-center m-0">
-                    <Button class="button-74" role="button"><a href="galerie.html">En voir plus</a></Button>
-
-                </div>
-
+            <div class="flex justify-around items-center m-0">
+              <button class="button-74" role="button">
+                <a href="galerie.html">En voir plus</a>
+              </button>
             </div>
+          </div>
 
-
+        <!------------Webdesign------------------>
+        <div class="slide">
+          <div class="containerS">
+            <div class="categorie">
+              <h1 class="text-4xl no-underline m-2.5">WEB</h1>
+              <div class="surDiv">
+                <div class="competence">
+                  <p>HMLT-CSS</p>
+                  <div class="barre">
+                    <div style="width: 75%">
+                      <div class="progress"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="competence">
+                  <p>CMS</p>
+                  <div class="barre">
+                    <div style="width: 60%">
+                      <div class="progress"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="competence">
+                  <p>PHP</p>
+                  <div class="barre">
+                    <div style="width: 50%">
+                      <div class="progress"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="competence">
+                  <p>Java Script</p>
+                  <div class="barre">
+                    <div style="width: 60%">
+                      <div class="progress"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="production">
+              <div class="productionI">
+                <a
+                  href="https://alyciawood.github.io/YokiData/"
+                  class="flex justify-center items-center flex-col"
+                  ><img src="assets/logoData.png" alt="" />YokiData</a
+                >
+                <a
+                  href="https://enoratortech.github.io/TheWood/index.html"
+                  class="flex justify-center items-center flex-col"
+                  ><img src="assets/logoTheWood.PNG" class="w-1/2" alt="" />The
+                  Wood</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-around items-center m-0">
+            <button class="button-74" role="button">
+              <a href="galerie.html">En voir plus</a>
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <script src="js/carousel.js"></script>
 
-
-    <footer class="flex flex-col md:flex-row bg-black text-white justify-between items-center w-full p-6">
-        <!-- Social Media -->
-        <div class="flex flex-col md:flex-row items-center">
-            <p class="mb-2 md:mb-0 md:mr-4">Retrouvez-moi sur:</p>
-            <a href="https://www.instagram.com/erza_wood/" class="inline-block">
-                <img src="assets/insta.webp" alt="Instagram" class="h-10" />
-            </a>
-        </div>
-        <!-- Contact Info -->
-        <div class="flex flex-col items-center md:items-start text-center md:text-left mt-4 md:mt-0">
-            <p>Email : enora.tortech@gmail.com</p>
-            <p>Tel : 06 02 51 18 92</p>
-        </div>
+    <footer
+      class="flex flex-col md:flex-row bg-black text-white justify-between items-center w-full p-6"
+    >
+      <!-- Social Media -->
+      <div class="flex flex-col md:flex-row items-center">
+        <p class="mb-2 md:mb-0 md:mr-4">Retrouvez-moi sur:</p>
+        <a href="https://www.instagram.com/erza_wood/" class="inline-block">
+          <img src="assets/insta.webp" alt="Instagram" class="h-10" />
+        </a>
+      </div>
+      <!-- Contact Info -->
+      <div
+        class="flex flex-col items-center md:items-start text-center md:text-left mt-4 md:mt-0"
+      >
+        <p>Email : enora.tortech@gmail.com</p>
+        <p>Tel : 06 02 51 18 92</p>
+      </div>
     </footer>
 
     <script>
-        // Sélection des éléments
-        const menuToggle = document.getElementById('menu-toggle'); // Bouton burger
-        const menuMobile = document.getElementById('menu-mobile'); // Menu mobile
-        const menuClose = document.getElementById('menu-close'); // Bouton Exit
+      // Sélection des éléments
+      const menuToggle = document.getElementById("menu-toggle"); // Bouton burger
+      const menuMobile = document.getElementById("menu-mobile"); // Menu mobile
+      const menuClose = document.getElementById("menu-close"); // Bouton Exit
 
-        // Ouvrir le menu burger
-        menuToggle.addEventListener('click', () => {
-            menuMobile.classList.remove('hidden'); // Affiche le menu mobile
-        });
+      // Ouvrir le menu burger
+      menuToggle.addEventListener("click", () => {
+        menuMobile.classList.remove("hidden"); // Affiche le menu mobile
+      });
 
-        // Fermer le menu burger
-        menuClose.addEventListener('click', () => {
-            menuMobile.classList.add('hidden'); // Masque le menu mobile
-        });
+      // Fermer le menu burger
+      menuClose.addEventListener("click", () => {
+        menuMobile.classList.add("hidden"); // Masque le menu mobile
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
