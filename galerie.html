@@ -1,287 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Galerie avec Zoom</title>
-    <!-- TailwindCSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css" />
-    
-  </head>
 
-  <body class="bg-gray-100">
-    <!-- Barre de navigation -->
-    <nav class="bg-black p-4 fixed w-full top-0 left-0 z-50">
-      <div class="container mx-auto flex justify-between items-center">
-        <!-- Logo -->
-        <a href="index.html">
-          <img src="assets/logoV2.png" alt="Logo" id="logo" />
-        </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Galerie avec Zoom</title>
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
 
-        <!-- Bouton Burger -->
-        <button
-          class="xl:hidden text-white focus:outline-none"
-          id="menu-toggle"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </button>
+</head>
 
-        <!-- Menu principal visible au-delà de 1280px -->
-        <div
-          id="menu"
-          class="hidden xl:flex flex-col xl:flex-row space-y-4 xl:space-y-0 xl:space-x-6 text-center xl:text-left"
-        >
-          <a href="/" class="navA">Accueil</a>
-          <a href="portfolioProfessionel.html" class="navA">Mon Portfolio</a>
-          <a href="portfolioUniversitaire.html" class="navA">Compétences</a>
-          <a href="galerie.html" class="navA">Galerie</a>
-          <a href="contact.html" class="navA">Contact</a>
-        </div>
-      </div>
+<body class="bg-gray-100">
+  <!-- Barre de navigation -->
+  <nav class="bg-black p-4 fixed w-full top-0 left-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html">
+        <img src="assets/logoV2.png" alt="Logo" id="logo" />
+      </a>
 
-      <!-- Menu mobile burger -->
-      <div
-        id="menu-mobile"
-        class="hidden bg-black absolute top-0 left-0 w-full h-screen p-6 flex flex-col items-center space-y-4 text-2xl"
-      >
-        <!-- Bouton Exit -->
-        <button class="text-white self-end focus:outline-none" id="menu-close">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
-          </svg>
-        </button>
+      <!-- Bouton Burger -->
+      <button class="xl:hidden text-white focus:outline-none" id="menu-toggle">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
 
-        <!-- Liens du menu mobile -->
+      <!-- Menu principal visible au-delà de 1280px -->
+      <div id="menu"
+        class="hidden xl:flex flex-col xl:flex-row space-y-4 xl:space-y-0 xl:space-x-6 text-center xl:text-left">
         <a href="/" class="navA">Accueil</a>
         <a href="portfolioProfessionel.html" class="navA">Mon Portfolio</a>
         <a href="portfolioUniversitaire.html" class="navA">Compétences</a>
         <a href="galerie.html" class="navA">Galerie</a>
         <a href="contact.html" class="navA">Contact</a>
       </div>
-    </nav>
-    <!-- Bannière sous la navbar -->
-    <section
-      class="canvas-wrap flex flex-col justify-center items-center text-center h-[30vh] relative overflow-hidden"
-    >
-      <div class="canvas-content z-10">
-        <h1 class="no-underline text-xl lg:text-4xl font-bold mt-20">
-          Enora Tortech
-        </h1>
-        <h2 class="no-underline text-lg lg:text-2xl mt-5">Portfolio</h2>
-      </div>
-      <div
-        id="canvas"
-        class="gradient absolute top-0 left-0 w-full h-full"
-      ></div>
-    </section>
-    <!-- Main library -->
-    <script src="js/three.min.js"></script>
-
-    <!-- Helpers -->
-    <script src="js/projector.js"></script>
-    <script src="js/canvas-renderer.js"></script>
-
-    <!-- Visualitzation adjustments -->
-    <script src="js/3d-lines-animation.js"></script>
-    <!-- Galerie -->
-    <section class="mt-20 p-6">
-      <h2
-        class="text-black text-2xl flex justify-center items-center mb-5 font-bold"
-      >
-        Sneaker
-      </h2>
-      <div
-        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 w-11/12 mx-auto"
-      >
-        <!-- Exemple d'images avec des descriptions -->
-        <div class="gallery">
-          <img
-            src="assets/sneaker.jpg"
-            alt="MF26"
-            class="cursor-pointer"
-            data-description="Sneaker inspirée de l'art de François Morellet, modèle MF26"
-          />
-        </div>
-        <div class="gallery">
-          <img
-            src="assets/sneakerArrière.jpg"
-            alt="MF26 arrière"
-            class="cursor-pointer"
-            data-description="Vue arrière du modèle MF26"
-          />
-        </div>
-        <div class="gallery">
-          <img
-            src="assets/sneakerDessus.jpg"
-            alt="MF26 dessus"
-            class="cursor-pointer"
-            data-description="Vue du dessus de la sneaker MF26"
-          />
-        </div>
-        <div class="gallery">
-          <img
-            src="assets/sneakerNuit.jpg"
-            alt="MF26 dessus"
-            class="cursor-pointer"
-            data-description="Vue du dessus de la sneaker MF26"
-          />
-        </div>
-        <div class="gallery">
-          <img
-            src="assets/SneakerInsta.jpg"
-            alt="MF26 dessus"
-            class="cursor-pointer"
-            data-description="Vue du dessus de la sneaker MF26"
-          />
-        </div>
-        <!-- Autres images... -->
-      </div>
-    </section>
-
-    <section class="mt-20 p-6">
-      <h2 class="text-black text-2xl flex justify-center items-center mb-5 font-bold">Bière et Packaging</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 w-11/12 mx-auto">
-        <!-- Exemple d'images avec des descriptions -->
-        <div class="gallery">
-          <img
-            src="assets/v1.jpg"
-            alt="Design de la bouteille"
-            class="cursor-pointer"
-            data-description="Ceci est un projet en cours sur la création d'une bière artisanale et de son packaging autour du conte de 'La Princesse Kaguya'. Cette image présente le design de la bouteille."
-          />
-        </div>
-        <div class="gallery">
-          <img
-            src="assets/v2.jpg"
-            alt="Illustration du packaging"
-            class="cursor-pointer"
-            data-description="Une vue détaillée du packaging de la bière. L'univers visuel s'inspire des motifs traditionnels japonais et des éléments du conte."
-          />
-        </div>
-        <div class="gallery">
-          <img
-            src="assets/v3.jpg"
-            alt="Prototype du packaging"
-            class="cursor-pointer"
-            data-description="Prototype du packaging mettant en avant des couleurs et textures reflétant l'esthétique japonaise."
-          />
-        </div>
-        <div class="gallery">
-          <img
-            src="assets/v1Insta.png"
-            alt="Étiquette détaillée"
-            class="cursor-pointer"
-            data-description="L'étiquette explore des motifs inspirés des bambous et de la lumière lunaire, un hommage à la Princesse Kaguya."
-          />
-        </div>
-        <div class="gallery">
-          <img
-            src="assets/binsta.jpg"
-            alt="Scène finale"
-            class="cursor-pointer"
-            data-description="Une scène finale montrant la bière en situation, prête à être appréciée dans un univers visuel cohérent."
-          />
-        </div>
-        <!-- Autres images... -->
-      </div>
-
-    <!-- Modale -->
-    <div id="imageModal">
-      <span id="modalClose">&times;</span>
-      <img id="modalImage" src="" alt="Image agrandie" />
-      <div id="modalText" class="modal-text"></div>
     </div>
 
-    <footer
-      class="flex flex-col md:flex-row bg-black text-white justify-between items-center w-full p-6 space-y-6 md:space-y-0"
-    >
-      <!-- Social Media Section -->
-      <div
-        class="flex flex-col items-center md:flex-row md:items-center md:justify-start text-center md:text-left space-y-4 md:space-y-0 md:space-x-4"
-      >
-        <p class="text-lg font-semibold">Retrouvez-moi sur :</p>
-        <a href="https://www.instagram.com/erza_wood/" class="inline-block">
-          <img src="assets/insta.webp" alt="Instagram" class="h-10" />
+    <!-- Menu mobile burger -->
+    <div id="menu-mobile"
+      class="hidden bg-black absolute top-0 left-0 w-full h-screen p-6 flex flex-col items-center space-y-4 text-2xl">
+      <!-- Bouton Exit -->
+      <button class="text-white self-end focus:outline-none" id="menu-close">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Liens du menu mobile -->
+      <a href="/" class="navA">Accueil</a>
+      <a href="portfolioProfessionel.html" class="navA">Mon Portfolio</a>
+      <a href="portfolioUniversitaire.html" class="navA">Compétences</a>
+      <a href="galerie.html" class="navA">Galerie</a>
+      <a href="contact.html" class="navA">Contact</a>
+    </div>
+  </nav>
+  <!-- Bannière sous la navbar -->
+  <section class="canvas-wrap flex flex-col justify-center items-center text-center h-[30vh] relative overflow-hidden">
+    <div class="canvas-content z-10">
+      <h1 class="no-underline text-xl lg:text-4xl font-bold mt-20">
+        Enora Tortech
+      </h1>
+      <h2 class="no-underline text-lg lg:text-2xl mt-5">Portfolio</h2>
+    </div>
+    <div id="canvas" class="gradient absolute top-0 left-0 w-full h-full"></div>
+  </section>
+  <!-- Main library -->
+  <script src="js/three.min.js"></script>
+
+  <!-- Helpers -->
+  <script src="js/projector.js"></script>
+  <script src="js/canvas-renderer.js"></script>
+
+  <!-- Visualitzation adjustments -->
+  <script src="js/3d-lines-animation.js"></script>
+  <!-- Galerie -->
+  <section class="mt-20 p-6">
+    <h2 class="text-black text-2xl flex justify-center items-center mb-5 font-bold">
+      Sneaker
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 w-11/12 mx-auto">
+      <!-- Exemple d'images avec des descriptions -->
+      <div class="gallery">
+        <img src="assets/sneaker.jpg" alt="MF26" class="cursor-pointer"
+          data-description="Sneaker inspirée de l'art de François Morellet, modèle MF26" />
+      </div>
+      <div class="gallery">
+        <img src="assets/sneakerArrière.jpg" alt="MF26 arrière" class="cursor-pointer"
+          data-description="Vue arrière du modèle MF26" />
+      </div>
+      <div class="gallery">
+        <img src="assets/sneakerDessus.jpg" alt="MF26 dessus" class="cursor-pointer"
+          data-description="Vue du dessus de la sneaker MF26" />
+      </div>
+      <div class="gallery">
+        <img src="assets/sneakerNuit.jpg" alt="MF26 dessus" class="cursor-pointer"
+          data-description="Vue du dessus de la sneaker MF26" />
+      </div>
+      <div class="gallery">
+        <img src="assets/SneakerInsta.jpg" alt="MF26 dessus" class="cursor-pointer"
+          data-description="Vue du dessus de la sneaker MF26" />
+      </div>
+      <!-- Autres images... -->
+    </div>
+  </section>
+
+  <section class="mt-20 p-6">
+    <h2 class="text-black text-2xl flex justify-center items-center mb-5 font-bold">Bière et Packaging</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 w-11/12 mx-auto">
+      <!-- Exemple d'images avec des descriptions -->
+      <div class="gallery">
+        <img src="assets/v1.jpg" alt="Design de la bouteille" class="cursor-pointer"
+          data-description="Ceci est un projet en cours sur la création d'une bière artisanale et de son packaging autour du conte de 'La Princesse Kaguya'. Cette image présente le design de la bouteille." />
+      </div>
+      <div class="gallery">
+        <img src="assets/v2.jpg" alt="Illustration du packaging" class="cursor-pointer"
+          data-description="Une vue détaillée du packaging de la bière. L'univers visuel s'inspire des motifs traditionnels japonais et des éléments du conte." />
+      </div>
+      <div class="gallery">
+        <img src="assets/v3.jpg" alt="Prototype du packaging" class="cursor-pointer"
+          data-description="Prototype du packaging mettant en avant des couleurs et textures reflétant l'esthétique japonaise." />
+      </div>
+      <div class="gallery">
+        <img src="assets/v1Insta.png" alt="Étiquette détaillée" class="cursor-pointer"
+          data-description="L'étiquette explore des motifs inspirés des bambous et de la lumière lunaire, un hommage à la Princesse Kaguya." />
+      </div>
+      <div class="gallery">
+        <img src="assets/binsta.jpg" alt="Scène finale" class="cursor-pointer"
+          data-description="Une scène finale montrant la bière en situation, prête à être appréciée dans un univers visuel cohérent." />
+      </div>
+      <!-- Autres images... -->
+    </div>
+  </section>
+  <section class="mt-20 p-6">
+    <h2 class="text-black text-2xl flex justify-center items-center mb-5 font-bold">Site web</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 w-11/12 mx-auto">
+      <!-- Exemple d'images avec des descriptions -->
+      <div class="gallery">
+        <a href="https://logeas-web.fr/accueil" target="_blank">
+          <img src="assets/logeasSite.png" alt="Design de la bouteille"
+            class="cursor-pointer w-full h-auto max-h-48 object-cover rounded-lg modal-enabled" />
         </a>
       </div>
-
-      <!-- Contact Info Section -->
-      <div
-        class="flex flex-col items-center md:items-start text-center md:text-left space-y-2"
-      >
-        <p class="font-semibold text-lg">Contact :</p>
-        <p>
-          Email :
-          <a href="mailto:enora.tortech@gmail.com" class="hover:underline">
-            enora.tortech@gmail.com
-          </a>
-        </p>
-        <p>
-          Tel :
-          <a href="tel:0602511892" class="hover:underline"> 06 02 51 18 92 </a>
-        </p>
+      <div class="gallery">
+        <a href="https://enoratortech.github.io/YokiData/" target="_blank">
+          <img src="assets/yokaiDataSite.png" alt="Illustration du packaging" class="cursor-pointer cursor-pointer w-full h-auto max-h-48 object-cover rounded-lg modal-enabled"
+            data-description="Une vue détaillée du packaging de la bière. L'univers visuel s'inspire des motifs traditionnels japonais et des éléments du conte." />
+        </a>
       </div>
-    </footer>
+      <div class="gallery">
+        <a href="https://www.example3.com" target="_blank">
+          <img src="assets/v3.jpg" alt="Prototype du packaging" class="cursor-pointer cursor-pointer w-full h-auto max-h-48 object-cover rounded-lg modal-enabled"
+            data-description="Prototype du packaging mettant en avant des couleurs et textures reflétant l'esthétique japonaise." />
+        </a>
+      </div>
+      <div class="gallery">
+        <a href="https://www.example4.com" target="_blank">
+          <img src="assets/v1Insta.png" alt="Étiquette détaillée" class="cursor-pointer cursor-pointer w-full h-auto max-h-48 object-cover rounded-lg modal-enabled"
+            data-description="L'étiquette explore des motifs inspirés des bambous et de la lumière lunaire, un hommage à la Princesse Kaguya." />
+        </a>
+      </div>
+      <div class="gallery">
+        <a href="https://www.example5.com" target="_blank">
+          <img src="assets/binsta.jpg" alt="Scène finale" class="cursor-pointer cursor-pointer w-full h-auto max-h-48 object-cover rounded-lg modal-enabled"
+            data-description="Une scène finale montrant la bière en situation, prête à être appréciée dans un univers visuel cohérent." />
+        </a>
+      </div>
+      <!-- Autres images... -->
+    </div>
+  </section>
+
+  <footer
+    class="flex flex-col md:flex-row bg-black text-white justify-between items-center w-full p-6 space-y-6 md:space-y-0">
+    <!-- Social Media Section -->
+    <div
+      class="flex flex-col items-center md:flex-row md:items-center md:justify-start text-center md:text-left space-y-4 md:space-y-0 md:space-x-4">
+      <p class="text-lg font-semibold">Retrouvez-moi sur :</p>
+      <a href="https://www.instagram.com/erza_wood/" class="inline-block">
+        <img src="assets/insta.webp" alt="Instagram" class="h-10" />
+      </a>
+    </div>
+
+    <!-- Contact Info Section -->
+    <div class="flex flex-col items-start">
+
+      <p>
+        Email :
+        <a href="mailto:enora.tortech@gmail.com" class="hover:underline">
+          enora.tortech@gmail.com
+        </a>
+      </p>
+      <p>
+        Tel :
+        <a href="tel:0602511892" class="hover:underline"> 06 02 51 18 92 </a>
+      </p>
+    </div>
+  </footer>
+  <!-- Modale -->
+  <div id="imageModal">
+    <span id="modalClose">&times;</span>
+    <img id="modalImage" src="" alt="Image agrandie" />
+    <div id="modalText" class="modal-text"></div>
+  </div>
 
 
-    <!-- Script pour afficher les images dans une modale avec texte -->
-    <script>
-      // Récupération des éléments
-      const modal = document.getElementById("imageModal");
-      const modalImage = document.getElementById("modalImage");
-      const modalText = document.getElementById("modalText");
-      const modalClose = document.getElementById("modalClose");
-      const images = document.querySelectorAll(".gallery img");
 
-      // Assure-toi que la modale est cachée au début
-      modal.style.display = "none";
+  <!-- Script pour afficher les images dans une modale avec texte -->
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalText = document.getElementById("modalText");
+    const modalClose = document.getElementById("modalClose");
+    const images = document.querySelectorAll(".gallery img");
 
-      // Afficher la modale avec l'image sélectionnée et son texte
-      images.forEach((img) => {
-        img.addEventListener("click", () => {
-          modal.style.display = "flex"; // Ouvrir la modale
-          modalImage.src = img.src; // Changer l'image de la modale
-          modalText.textContent = img.getAttribute("data-description"); // Afficher la description
-        });
-      });
+    // Masquer la modale par défaut
+    modal.style.display = "none";
 
-      // Fermer la modale en cliquant sur la croix
-      modalClose.addEventListener("click", () => {
-        modal.style.display = "none"; // Fermer la modale
-      });
-
-      // Fermer la modale en cliquant en dehors de l'image
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.style.display = "none"; // Fermer la modale si on clique en dehors
+    // Seules les images avec la classe 'modal-enabled' ouvriront la modale
+    images.forEach((img) => {
+      img.addEventListener("click", () => {
+        if (img.classList.contains("modal-enabled")) {
+          modal.style.display = "flex";
+          modalImage.src = img.src;
+          modalText.textContent = img.getAttribute("data-description");
         }
       });
-    </script>
-  </body>
+    });
+
+    modalClose.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+  </script>
+</body>
+
 </html>
