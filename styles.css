@@ -1,8 +1,57 @@
 :root {
     --nav-height: 90px;
+    --color-ps-light : #2DAAFF;
+    --color-ps-dark: #001833;
+    --color-illu-light : #FF9B00;
+    --color-illu-dark : #300000;
+    --color-after-light: #9A9AFF;
+    --color-after-dark:#00005B;
+    --color-indesign-light : #FF3066;
+    --color-indesign-dark: #470019;
+    --color-css: #0B74B8;
+    --color-html: #F1662B;
+    --color-wordpress : #007DB5;
+    --color-tailwind : #35BEF8;
+    --color-js-light: #EFBE24;
+    --color-js-dark:#E4A125;
+    --color-angular-dark :#C4002B;
+    --color-angular-light: #F20505;
     /* Hauteur de la navbar */
 }
+/*------------FONT---------------*/
+.font-portfolio{
+     font-family: "Tangerine", cursive;
 
+}
+/*-----------COLOR----------------*/
+.color-ps{
+    background: linear-gradient(to right, var(--color-ps-dark), var(--color-ps-light));
+
+}
+.color-illu{
+    background: linear-gradient(to right, var(--color-illu-light), var(--color-illu-dark));
+
+}
+.color-after{
+    background: linear-gradient(to right, var(--color-after-light), var(--color-after-dark));
+
+}
+.color-indesign{
+    background: linear-gradient(to right, var(--color-indesign-dark), var(--color-indesign-light));
+
+}
+.color-html-css{
+    background: linear-gradient(to right, var(--color-css), var(--color-html));
+}
+.color-cms{
+     background: linear-gradient(to right, var(--color-wordpress), var(--color-tailwind));
+}
+.color-js{
+     background: linear-gradient(to right, var(--color-js-light), var(--color-js-dark));
+}
+.color-angular{
+     background: linear-gradient(to right, var(--color-angular-dark), var(--color-angular-light));
+}
 
 /* Définir la hauteur de la barre de navigation */
 
@@ -22,11 +71,11 @@ header nav {
 
 
 /* Appliquer une marge à la bannière pour qu'elle soit sous la navbar */
-
+/* 
 .mt-[var(--nav-height)] {
     margin-top: var(--nav-height);
-    /* Marge égale à la hauteur de la navbar */
-}
+    /* Marge égale à la hauteur de la navbar 
+} */
 
 
 /* Bannière : elle commence sous la navbar */
@@ -347,7 +396,7 @@ h1 {
 
 .progress {
     border-radius: 6px;
-    background-color: grey;
+    
     width: 0%;
     transition: width 2s;
 }
