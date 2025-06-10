@@ -14,10 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   controlButtons.forEach((button, index) => {
-    button.addEventListener("click", function () {
-      showSlide(index);
-    });
+  button.addEventListener("click", function () {
+    showSlide(index);
+    controlButtons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
   });
+});
+
 
   showSlide(0); // Afficher le premier bloc par défaut
 });
